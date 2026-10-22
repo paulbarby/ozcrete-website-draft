@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ozcrete Pools — Draft Homepage Layout (Master Builders 30 Year Milestone)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/apple-touch-icon.png">
+<style>
+  :root{
+    /* Master Builders brand colours as supplied */
+    --mb-orange:#F8991D;   /* PMS 144C */
+    --mb-blue:#2D4A9F;     /* PMS 2736C */
+
+    /* Ozcrete site palette */
+    --ink:#12213a;
+    --ink-soft:#4a5a72;
+    --line:#dfe5ee;
+    --bg:#ffffff;
+    --bg-alt:#f5f7fb;
+    --radius:10px;
+    --wrap:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+  a{color:inherit}
+
+  /* ---------- draft banner ---------- */
+  .draftbar{
+    background:#b3261e;color:#fff;text-align:center;
+    font-size:13px;font-weight:600;letter-spacing:.04em;padding:8px 16px;
+  }
+  .draftbar span{opacity:.85;font-weight:400}
+
+  /* ---------- header ---------- */
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:50}
+  .nav{display:flex;align-items:center;gap:28px;min-height:82px;flex-wrap:wrap}
+  .brand img{height:64px;width:auto;display:block}
+  .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;margin-left:auto;flex-wrap:wrap}
+  .nav a{text-decoration:none;font-size:14.5px;font-weight:600;color:var(--ink-soft);padding:6px 0;border-bottom:2px solid transparent}
+  .nav a:hover{color:var(--mb-blue);border-bottom-color:var(--mb-orange)}
+  .nav .cta{background:var(--mb-blue);color:#fff;padding:11px 20px;border-radius:6px;border:0}
+  .nav .cta:hover{background:#243d85;border:0;color:#fff}
+
+  /* ---------- hero ---------- */
+  .hero{padding:76px 0 66px;background:
+    radial-gradient(1100px 460px at 78% -8%, rgba(45,74,159,.10), transparent 62%),
+    radial-gradient(760px 340px at 4% 108%, rgba(248,153,29,.12), transparent 60%),
+    var(--bg);}
+  .hero h1{font-size:clamp(31px,4.6vw,53px);line-height:1.1;margin:0 0 18px;letter-spacing:-.02em;max-width:19ch}
+  .hero p{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);max-width:62ch;margin:0 0 30px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;font-size:15.5px;padding:15px 28px;border-radius:7px}
+  .btn-primary{background:var(--mb-orange);color:#3a2500}
+  .btn-primary:hover{background:#e88b12}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--mb-blue);color:var(--mb-blue)}
+
+  /* ---------- milestone band (the placement decision) ---------- */
+  .milestone{
+    background:var(--mb-blue);color:#fff;padding:0;
+    border-top:5px solid var(--mb-orange);
+  }
+  .milestone .inner{
+    display:grid;grid-template-columns:1fr auto;gap:52px;align-items:center;
+    max-width:var(--wrap);margin:0 auto;padding:52px 22px;
+  }
+  .milestone .eyebrow{
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;color:#ffc978;margin:0 0 14px;
+  }
+  .milestone h2{font-size:clamp(24px,3.1vw,35px);line-height:1.18;margin:0 0 14px;letter-spacing:-.015em}
+  .milestone p{margin:0;color:#d7dff2;max-width:56ch;font-size:16.5px}
+  .milestone .facts{display:flex;gap:34px;margin-top:24px;flex-wrap:wrap}
+  .milestone .facts div{font-size:14px;color:#b9c6e6}
+  .milestone .facts strong{display:block;font-size:24px;color:#fff;letter-spacing:-.01em}
+
+  /* Official lockup space.
+     Clear space = half the wordmark height is the MINIMUM; generous over-clearance never breaches it.
+     Rendered at 430px wide (>57px = 15mm minimum). Rectangular variant 3298x1858, ratio 1.775. */
+  .lockup-slot{display:flex;justify-content:center}
+  .lockup-slot .clearance{
+    background:#fff;border-radius:8px;padding:38px 44px;
+    box-shadow:0 10px 34px rgba(6,16,40,.28);
+  }
+  .lockup-slot img{display:block;width:430px;max-width:100%;height:auto}
+
+  /* ---------- services ---------- */
+  section{padding:74px 0}
+  .sec-head{max-width:70ch;margin:0 0 42px}
+  .sec-head h2{font-size:clamp(25px,3.3vw,37px);margin:0 0 12px;letter-spacing:-.02em}
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:17px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:22px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;background:#fff}
+  .card h3{margin:0 0 10px;font-size:19px;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .card .tag{
+    display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--mb-orange);margin:0 0 12px;
+  }
+
+  /* ---------- projects / statement ---------- */
+  .band{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .statement{font-size:clamp(20px,2.5vw,29px);line-height:1.42;letter-spacing:-.015em;max-width:44ch;margin:0}
+  .statement b{color:var(--mb-blue)}
+
+  /* ---------- affiliates ---------- */
+  .logogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+  .logogrid .cell{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    min-height:104px;display:flex;align-items:center;justify-content:center;padding:18px;
+  }
+  .logogrid img{max-width:100%;max-height:52px;width:auto;filter:grayscale(1);opacity:.78;transition:.18s}
+  .logogrid .cell:hover img{filter:none;opacity:1}
+  .aff-note{margin:22px 0 0;font-size:14px;color:var(--ink-soft)}
+
+  /* ---------- contact / footer ---------- */
+  footer{background:var(--ink);color:#c9d3e4;padding:64px 0 30px;margin-top:0}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
+  footer h4{color:#fff;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px}
+  footer ul{list-style:none;margin:0;padding:0}
+  footer li{margin:0 0 11px;font-size:15px}
+  footer a{text-decoration:none;color:#c9d3e4}
+  footer a:hover{color:var(--mb-orange)}
+  .foot-legal{border-top:1px solid #2a3b58;margin-top:44px;padding-top:22px;font-size:13px;color:#8c9bb5;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+
+  /* ---------- internal review notes (not part of the design) ---------- */
+  .notes{background:#fffbe9;border:1px dashed #d9a700;border-radius:var(--radius);padding:26px 28px;margin:0 0 60px}
+  .notes h3{margin:0 0 12px;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#8a6a00}
+  .notes ul{margin:0;padding-left:20px}
+  .notes li{margin:0 0 10px;font-size:15px;color:#4a4126}
+  .notes code{background:#f1e9c9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+
+  @media (max-width:860px){
+    .milestone .inner{grid-template-columns:1fr;gap:34px;text-align:left}
+    .lockup-slot{justify-content:flex-start}
+    .lockup-slot img{width:330px}
+    .fgrid{grid-template-columns:1fr;gap:32px}
+    .nav ul{margin-left:0;gap:18px}
+  }
+</style>
+</head>
+<body>
+
+<div class="draftbar">DRAFT LAYOUT — FOR INTERNAL REVIEW ONLY <span>· not the live ozcrete.com.au site · noindex</span></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="assets/OZCRETE_LOGO_med_with_trans.png" alt="Ozcrete Pools"></a>
+    <ul>
+      <li><a href="#services">Commercial Pools</a></li>
+      <li><a href="#services">Maintenance</a></li>
+      <li><a href="#services">Filtration</a></li>
+      <li><a href="#affiliates">Affiliates</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+    <a class="cta nav cta" href="#contact">Request a consultation</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <h1>Commercial aquatic construction, done properly the first time.</h1>
+      <p>Ozcrete builds and maintains aquatic centres and high-end domestic pools across Queensland — filtration design, construction and ongoing service handled by one team that has been on the tools for three decades.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#contact">Request a consultation</a>
+        <a class="btn btn-ghost" href="#services">What we do</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILESTONE — third-party proof of standing, placed high, kept out of the supplier grid -->
+  <div class="milestone">
+    <div class="inner">
+      <div>
+        <p class="eyebrow">Credential</p>
+        <h2>Thirty years a Master Builders member.</h2>
+        <p>Master Builders membership is not a supplier arrangement — it is an independent assessment of how a builder operates. Thirty continuous years of it says something a project reference cannot.</p>
+        <div class="facts">
+          <div><strong>30</strong>years continuous membership</div>
+          <div><strong>QBCC</strong>Licence #1100119</div>
+          <div><strong>QLD</strong>Commercial aquatic specialists</div>
+        </div>
+      </div>
+      <div class="lockup-slot">
+        <!-- Official Master Builders 30 Year Member Milestone lockup goes here.
+             Awaiting MB_MemberMilestone_Logo_30Years_R.png (3298x1858).
+             Replace src only — the slot, sizing and clear space are already correct. -->
+        <div class="clearance">
+          <img src="assets/mb-milestone-placeholder.svg"
+               alt="Master Builders 30 Year Member Milestone"
+               width="3298" height="1858">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What we do</h2>
+        <p>Four services that cover the life of an aquatic facility, from the first drawing to the last service call.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">Construction</span>
+          <h3>Commercial pools &amp; aquatic centres</h3>
+          <p>Full construction of commercial aquatic facilities — filtration plant, hydraulics, structures and finishes — for councils, schools, developers and clubs. We build the plant room we have to maintain later, which changes how it gets built.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Maintenance</span>
+          <h3>Maintenance &amp; repairs</h3>
+          <p>Pools take a hammering over a Queensland summer. Scheduled servicing, minor repairs and breakdown response for commercial facilities that cannot afford to be closed.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Filtration</span>
+          <h3>Filtration systems</h3>
+          <p>Complete end-to-end commercial filtration solutions — design, supply, install and commissioning. Built around the actual bather load and the actual water, not a catalogue number.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Consultation</span>
+          <h3>Consultation &amp; project advice</h3>
+          <p>Bring us in early and we will tell you what the design will cost you in maintenance for the next twenty years. Experience makes the difference, and it is cheaper before the concrete goes in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <div class="band">
+    <section>
+      <div class="wrap">
+        <p class="statement">The commercial building industry has a gap in it — aquatic work gets handed to builders who have never run a plant room. <b>Ozcrete has spent thirty years filling that gap.</b></p>
+      </div>
+    </section>
+  </div>
+
+  <!-- AFFILIATES -->
+  <section id="affiliates">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Affiliates</h2>
+        <p>The suppliers and manufacturers we work with to deliver aquatic projects.</p>
+      </div>
+      <div class="logogrid">
+        <div class="cell"><img src="assets/ardex.svg" alt="Ardex Australia"></div>
+        <div class="cell"><img src="assets/brauer-industries.svg" alt="Brauer Industries"></div>
+        <div class="cell"><img src="assets/evoheat.png" alt="EvoHeat"></div>
+        <div class="cell"><img src="assets/fmg-engineering.png" alt="FMG Engineering"></div>
+        <div class="cell"><img src="assets/neptune-benson.png" alt="Neptune Benson"></div>
+        <div class="cell"><img src="assets/pacific-water-treatment-services.webp" alt="Pacific Water Treatment Services"></div>
+        <div class="cell"><img src="assets/pentair.webp" alt="Pentair"></div>
+        <div class="cell"><img src="assets/sr-smith.png" alt="SR Smith"></div>
+        <div class="cell"><img src="assets/waterco.svg" alt="Waterco"></div>
+      </div>
+      <p class="aff-note">Note: the Master Builders 30 Year Member Milestone sits in the credential band above, not in this grid. This grid is a supply list; the milestone is third-party standing. Mixing the two weakens both.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Start with a conversation</h2>
+        <p>Tell us about the facility — new build, upgrade or a filtration problem nobody has solved yet. We will tell you straight whether we are the right builder for it.</p>
+      </div>
+      <div class="btns">
+        <a class="btn btn-primary" href="tel:+61738012805">Call (07) 3801 2805</a>
+        <a class="btn btn-ghost" href="mailto:info@ozcrete.com.au">Email us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNAL NOTES -->
+  <div class="wrap">
+    <div class="notes">
+      <h3>Internal review notes — delete before publishing</h3>
+      <ul>
+        <li><b>Logo is a placeholder.</b> The Master Builders 30 Year lockup shown is a correctly proportioned stand-in. The official rectangular PNG is <code>MB_MemberMilestone_Logo_30Years_R.png</code> (3298 &times; 1858) and still lives on Paul's <code>D:</code> drive — it has not reached the build machine. Drop it in and change one line: the <code>src</code> on the lockup <code>&lt;img&gt;</code>. Nothing else moves.</li>
+        <li><b>Tenure wording conflicts on the live site.</b> The current page title claims "35+ Years" while the Construction section says "over 10 years". This draft avoids both and anchors on the 30-year Master Builders milestone, which is documented. Marketing to decide the single claim to use site-wide.</li>
+        <li><b>The live site still carries Lorem Ipsum.</b> The "Commercial Pools" block and all three blog excerpts are dummy text (<code>Consequatur libero assumenda…</code>). Not reproduced here.</li>
+        <li><b>Copy on this draft is mine.</b> It is written to be defensible and in Ozcrete's voice, but Melissa should treat every line as a first pass — especially the maintenance and filtration paragraphs.</li>
+        <li><b>Structure only, no CMS.</b> This is a static layout demonstration, not a WordPress theme. If the layout is approved, the next step is deciding whether it becomes a WP template or moves to the static stack.</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Ozcrete Pools</h4>
+        <ul>
+          <li>13 Chetwynd Street<br>Loganholme QLD 4129<br>Australia</li>
+          <li style="margin-top:16px"><a href="tel:+61738012805">+61 (07) 3801 2805</a></li>
+          <li><a href="mailto:info@ozcrete.com.au">info@ozcrete.com.au</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Commercial Pools</a></li>
+          <li><a href="#services">Maintenance</a></li>
+          <li><a href="#services">Filtration</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compliance</h4>
+        <ul>
+          <li>QBCC #1100119</li>
+          <li>ABN 66 117 345 561</li>
+          <li>Master Builders member — 30 years</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2026 Ozcrete Pools. Draft layout for internal review.</span>
+      <span>Draft prepared by Bobby · layout only</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

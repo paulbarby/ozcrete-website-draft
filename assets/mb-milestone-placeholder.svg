@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3298 1858" width="3298" height="1858" role="img" aria-label="Placeholder for the Master Builders 30 Year Member Milestone lockup — awaiting official artwork">
+  <title>PLACEHOLDER — Master Builders 30 Year Member Milestone (rectangular, 3298 x 1858)</title>
+  <desc>Correctly proportioned placeholder. The official Master Builders rectangular lockup PNG drops into this exact space with no layout shift. Full-colour use only, clear space equal to half the wordmark height, never rendered under 15mm wide.</desc>
+
+  <rect x="0" y="0" width="3298" height="1858" fill="#ffffff"/>
+  <rect x="14" y="14" width="3270" height="1830" fill="none" stroke="#2D4A9F" stroke-width="14" stroke-dasharray="56 34" opacity="0.55"/>
+
+  <!-- brand bar: PMS 2736C -->
+  <rect x="150" y="150" width="2998" height="470" rx="10" fill="#2D4A9F"/>
+  <text x="1649" y="470" font-family="Arial, Helvetica, sans-serif" font-size="300" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="14">MASTER BUILDERS</text>
+
+  <!-- milestone: PMS 144C -->
+  <rect x="150" y="700" width="2998" height="430" rx="10" fill="#F8991D"/>
+  <text x="1649" y="900" font-family="Arial, Helvetica, sans-serif" font-size="230" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="10">30 YEAR</text>
+  <text x="1649" y="1060" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="26">MEMBER MILESTONE</text>
+
+  <text x="1649" y="1330" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="600" fill="#2D4A9F" text-anchor="middle" letter-spacing="18">QUEENSLAND</text>
+
+  <text x="1649" y="1500" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="700" fill="#b3261e" text-anchor="middle" letter-spacing="8">PLACEHOLDER — AWAITING OFFICIAL ARTWORK</text>
+  <text x="1649" y="1600" font-family="Arial, Helvetica, sans-serif" font-size="66" fill="#555555" text-anchor="middle">Do not reproduce, redraw or substitute the official lockup.</text>
+</svg>
